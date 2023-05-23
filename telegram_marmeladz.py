@@ -4,6 +4,7 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, Callb
 
 import os
 
+
 bot_token = os.environ['TELEGRAM_BOT_TOKEN']
 openai_api_key = os.environ['OPENAI_API_KEY']
 
