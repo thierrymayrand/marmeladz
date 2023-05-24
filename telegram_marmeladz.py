@@ -47,12 +47,15 @@ If you don't know my name after 5 messages ask me what my name is and memorize i
     openai.api_key = openai_api_key
 
     # Format the conversation for the completion endpoint
-    formatted_messages = [{'role': m['role'], 'content': m['content']} for m in conversations[update.message.chat_id]]
+    formatted_messages = [
+        {"role": m["role"], "content": m["content"]} for m in conversations[update.message.chat_id]
+    ]
+    prompt = "\n".join(f"{message['role']}: {message['content']}" for message in formatted_messages)
 
     # Generate a response using OpenAI GPT-3
     response = openai.Completion.create(
         engine="text-davinci-003",  # Use the text-davinci-003 model
-        prompt=formatted_messages,
+        prompt=prompt,
         max_tokens=100  # Adjust the max tokens as per your requirements
     )
 
