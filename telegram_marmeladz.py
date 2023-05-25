@@ -3,10 +3,13 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, Callb
 import openai
 import os
 
-bot = Bot(token="6080222699:AAGkJiNj_7A8LXqIs784qzqWSQPyvWh7eCA")
+bot_token = os.environ['TELEGRAM_BOT_TOKEN']
+openai_api_key = os.environ['OPENAI_API_KEY']
+
+bot = Bot(token=bot_token)
 
 # Ensure that you've set your OpenAI API key
-openai.api_key = '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'
+openai.api_key = openai_api_key
 
 def start(update: Update, context: CallbackContext) -> None:
     update.message.reply_text('Hello World!')
