@@ -41,7 +41,7 @@ def handle_message(update: Update, context: CallbackContext) -> None:
     response = openai.Completion.create(
         engine="text-davinci-003",
         prompt=prompt,
-        max_tokens=150
+        max_tokens=1000
     )
 
     # Extract the text from the response
