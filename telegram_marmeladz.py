@@ -37,7 +37,7 @@ def handle_message(update: Update, context: CallbackContext) -> None:
     conversation.append(f'User: {text}')
 
     # Prepare the API prompt using the conversation history.
-    prompt = '\n'.join(conversation[:] + ['Kate: '])  
+    prompt = '\n'.join(conversation[:] + ['Thierry: '])  
     
     # Call the OpenAI API
     response = openai.Completion.create(
@@ -50,7 +50,7 @@ def handle_message(update: Update, context: CallbackContext) -> None:
     ai_text = response.choices[0].text.strip()
 
     # Append the AI's response to the conversation history.
-    conversation.append(f'kate: {ai_text}')
+    conversation.append(f'Thierry: {ai_text}')
     context.chat_data[chat_id] = conversation
     
     # Convert text to speech using Eleven Labs API
