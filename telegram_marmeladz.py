@@ -74,4 +74,5 @@ message_handler = MessageHandler(Filters.text & (~Filters.command), handle_messa
 dispatcher.add_handler(start_handler)
 dispatcher.add_handler(message_handler)
 
+
 updater.start_polling()
