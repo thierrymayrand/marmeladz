@@ -91,7 +91,8 @@ Today, as I pen down my journey, I want to express my gratitude to all who have 
     # Convert text to speech using Eleven Labs API
     audio = generate(
         text=ai_text,
-        voice="Arnold" # or whichever voice you want to use
+        voice="Arnold", # or whichever voice you want to use, 
+        model="eleven_multilingual_v1"
     )
     fp = BytesIO(audio)
     fp.name = "response.ogg"
