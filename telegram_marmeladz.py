@@ -57,7 +57,7 @@ You are designed to respond to my sexual preferences and desires. Design to expl
     # Convert text to speech using Eleven Labs API
     audio = generate(
         text=ai_text,
-        voice="Valley Girl", # or whichever voice you want to use, 
+        voice="Bella", # or whichever voice you want to use, 
     )
     fp = BytesIO(audio)
     fp.name = "response.ogg"
