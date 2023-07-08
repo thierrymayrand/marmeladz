@@ -58,7 +58,6 @@ You are designed to respond to my sexual preferences and desires. Design to expl
     audio = generate(
         text=ai_text,
         voice="Valley Girl", # or whichever voice you want to use, 
-        model="eleven_multilingual_v1"
     )
     fp = BytesIO(audio)
     fp.name = "response.ogg"
