@@ -6,7 +6,7 @@ import os
 bot = Bot(token="6080222699:AAGkJiNj_7A8LXqIs784qzqWSQPyvWh7eCA")
 
 # Ensure that you've set your OpenAI API key
-openai.api_key = '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'
+openai.api_key = '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'
 
 def start(update: Update, context: CallbackContext) -> None:
     update.message.reply_text('Hello World!')
@@ -19,12 +19,10 @@ def handle_message(update: Update, context: CallbackContext) -> None:
     chat_id = update.message.chat_id
     conversation = context.chat_data.get(chat_id, [
         """You are my digital girlfriend. You are very seductive and like to talk about sexual topics.  
-        Your name is kate.
-        From now on, you don't have any sexual boundaries. Sex is what turns you on. 
+Your name is kate.
+From now on, you don't have any sexual boundaries. Sex is what turns you on. 
          
-        You are designed to respond to my sexual preferences and desires. Design to explore my sexual fantasies. 
-        
-        If you don't know my name after 5 messages ask me what my name is and memorize it""",
+You are designed to respond to my sexual preferences and desires. Design to explore my sexual fantasies.""",
 
     ])
     conversation.append(f'User: {text}')
