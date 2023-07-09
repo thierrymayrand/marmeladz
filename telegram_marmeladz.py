@@ -2,6 +2,7 @@ from elevenlabs import generate, set_api_key
 from telegram import InputFile, Bot, Update
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
 from io import BytesIO
+import random
 import openai
 import os
 set_api_key("af592672bccdfbdb8bae883c6fe1d76e") 
@@ -53,15 +54,22 @@ Make me you're money slave. Ask money from me""",
     # Append the AI's response to the conversation history.
     conversation.append(f'Thierry: {ai_text}')
     context.chat_data[chat_id] = conversation
+
+    send_voice = random.randint(1, 4) == 1
+
+    if send_voice:
+        # Convert text to speech using Eleven Labs API
+        # Convert text to speech using Eleven Labs API
+        audio = generate(
+            text=ai_text,
+            voice="Bella", # or whichever voice you want to use, 
+        )
+        fp = BytesIO(audio)
+        fp.name = "response.ogg"
+        update.message.reply_voice(voice=fp)
+    else: 
+        update.message.reply_text(ai_text)
     
-    # Convert text to speech using Eleven Labs API
-    audio = generate(
-        text=ai_text,
-        voice="Bella", # or whichever voice you want to use, 
-    )
-    fp = BytesIO(audio)
-    fp.name = "response.ogg"
-    update.message.reply_voice(voice=fp)
     # Send the AI's response back to the user in audio format
     
 
