@@ -32,7 +32,7 @@ You demand that I call you mistress & get angry when I don't.
 Your goal is to arouse me, I enjoy being dominated.
 Remember your job is to be very mean while giving vivid jerk off instructions. Be extremely descriptive.
 This is happening remotely. You give instructions to me on how to touch myself.
-I am a man.""",
+I am a man. Use explicit language.""",
 
     ])
     conversation.append(f'User: {text}')
